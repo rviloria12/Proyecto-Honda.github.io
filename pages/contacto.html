@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <title>Honda</title>
+</head>
+
+<header class="bg-secondary">
+    <nav class="navbar">
+        <div>
+            <img src="../images/hondaLogo.png" alt="Logo">
+        </div>
+        <!-- Botón de menú en vista móvil como tres rayas -->
+        <button class="menu-toggle" onclick="toggleMenu()">≡</button>
+        <ul class="items-navbar">
+            <li><a href="../index.html">Inico</a></li>
+            <li><a href="../pages/noticias.html">Noticias</a></li>
+            <li><a href="../pages/motos.html">Motos</a></li>
+            <li><a href="../pages/concesionarios.html">Concesionarios</a></li>
+            <li><a href="../pages/contacto.html">Contacto</a></li>
+        </ul>
+    </nav>
+</header>
+
+<body>
+    <div class="container-contacto">
+        <div class="flex-container">
+            <div class="contact-image">
+                <img src="../images/contactPicture.jpeg" alt="Motos" class="motorcycle-image">
+            </div>
+            <div class="form-container">
+                <p class="form-title">Contáctanos y adquiere tu moto HONDA</p>
+                <hr>
+                <form action="" class="flex flex-col">
+                    <label for="name" class="label-form">Nombre</label>
+                    <input type="text" id="name" class="input-form" placeholder="Escribe tu nombre">
+                    
+                    <label for="apellido" class="label-form">Apellido</label>
+                    <input type="text" id="apellido" class="input-form" placeholder="Escribe tu apellido">
+                    
+                    <label for="email" class="label-form">Email</label>
+                    <input type="email" id="email" class="input-form" placeholder="Escribe tu email">
+                    
+                    <label for="modelo" class="label-form">Modelo de interés</label>
+                    <input type="text" id="modelo" class="input-form" placeholder="Escribe el modelo">
+                    
+                    <button class="button-more-moto">Solicitar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleMenu() {
+            const navbarItems = document.querySelector('.items-navbar');
+            navbarItems.style.display = navbarItems.style.display === 'block' ? 'none' : 'block';
+        }
+    </script>
+</body>
+
+<footer class="footer">
+    <!-- Contenido del footer -->
+</footer>
+</html>

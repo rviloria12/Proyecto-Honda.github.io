@@ -1,0 +1,822 @@
+:root {
+    --primary: #8F0000;
+    --secondary: #F30000;
+  }
+
+/* Evita el desplazamiento horizontal en todo el documento */
+html, body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    width: 100%;
+}
+
+/* rules */
+
+h1,h2,h3,h4,h5,h6{
+    margin: 0;
+}
+
+body{
+    font-family: "Montserrat", sans-serif;
+}
+
+img{
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+hr{
+    height: 0;
+    color: inherit;
+    border-top-width: 1px;
+    color: #F30000;
+}
+
+/* utils */
+
+
+.bg-primary{
+    background-color: var(--primary);
+
+}
+
+.bg-secondary{
+    background-color: var(--secondary);
+}
+
+.text-primary{
+    color: var(--primary);
+}
+
+.container{
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 5rem;
+    padding-left: 5rem;
+    padding-right: 5rem;
+}
+
+.title-page{
+    text-transform: uppercase;
+    font-weight: 600;
+    font-style: italic;
+    padding-bottom: 1rem;
+    text-align: center;
+    padding-top: 5rem;
+}
+
+/* navbvar */
+
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+.items-navbar a {
+    color: white;
+    text-decoration: none; /* Elimina el subrayado */
+    font-weight: 700;
+    transition: color 0.3s ease, transform 0.3s ease; /* Animación suave para color y movimiento */
+}
+
+.items-navbar a:hover {
+    color: #800000; /* Cambia el color al pasar el cursor */
+    transform: translateY(-5px); /* Desplaza el enlace hacia arriba */
+}
+
+.navbar img{
+    width: 18rem;
+}
+
+.items-navbar {
+    display: flex;
+    gap: 2.5rem;
+    align-items: center;
+    padding-right: 5rem;
+    font-weight: 700;
+    list-style-type: none; /* Elimina los puntos de la lista */
+    margin: 0;
+    padding: 0;
+}
+.items-navbar li {
+    margin: 0 1rem; /* Espacio adicional entre las opciones */
+}
+
+.items-navbar a{
+    color: white;
+}
+
+/* Hero */
+
+.hero{
+    display: grid;
+    position: relative;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    background-color: black;
+}
+
+.content-hero{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.main-title{
+    color: white;
+    text-align: center;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+    font-style: italic;
+}
+
+.main-description{
+    margin-top: -20px;
+    color: white;
+    width: 46.66%;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1rem;
+    line-height: 1rem;
+}
+
+.img-hero{
+    grid-column: span 2 / span 2;
+}
+
+.more-options{
+    width: 100%;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    bottom: 5rem;
+}
+
+.more-options-bar{
+    background-color: white;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    width: 66.66%;
+    border-radius: 6px;
+}
+
+.option-item{
+    border-right: 2px solid var(--secondary);
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    text-align: center;
+    color: var(--primary);
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    font-weight: 700;
+}
+
+/* News */
+
+.card-block{
+    display: flex;
+    flex-direction: column;
+    margin-top: 2.5rem;
+    row-gap: 2.5rem;
+}
+
+.card-news{
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    border-radius: 6px;
+    border: 2px solid var(--primary);
+    padding: 1.5rem;
+}
+
+.image-card{
+    width: 84%;
+}
+
+.card-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 1.25rem;
+}
+
+.title-card-news{
+    color: var(--primary);
+    font-weight: 700;
+    text-align: center;
+}
+
+.text-card-news{
+    font-weight: 600;
+    text-align: center;
+}
+
+.youtube-div{
+    display: flex;
+    justify-content: center;
+}
+
+.youtube-news{
+    margin-top: 5rem;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 2rem;
+    row-gap: 1.5rem;
+}
+
+/* Estilos específicos para vista de móvil */
+@media (max-width: 768px) {
+    
+    .card-news {
+        grid-template-columns: 1fr; /* Hace que la tarjeta se apile en una sola columna */
+        text-align: center;
+    }
+
+    .image-card {
+        width: 100%; /* Asegura que la imagen ocupe el ancho disponible */
+        margin-bottom: 1rem; /* Añade espacio debajo de la imagen */
+    }
+
+    /* Ajuste para los videos en móvil */
+    .youtube-news {
+        grid-template-columns: 1fr; /* Una sola columna para que los videos se apilen verticalmente */
+        row-gap: 1.5rem; /* Espacio entre los videos */
+    }
+
+    .youtube-news iframe {
+        width: 100%; /* Asegura que cada video ocupe el ancho completo de la pantalla */
+        height: auto; /* Ajusta la altura automáticamente para mantener la relación de aspecto */
+    }
+}
+
+/* Motorcycles */
+.motos-div{
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    column-gap: 2.5rem;
+    margin-right: 1rem;
+    margin-left: 1rem;
+    padding-top: 2.5rem;
+}
+
+.motos-div .card{
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    row-gap: 0.75rem;
+    position: relative; /* Necesario para el efecto de humo */
+}
+
+.bg-moto{
+    background-color: rgb(229 231 235);
+    border-radius: 78px;
+    position: relative; /* Necesario para el efecto de humo */
+    overflow: hidden;
+}
+
+.bg-moto img{
+    height: auto;
+    border-radius: 6px;
+    padding: 2rem;
+    margin-left: -30px;
+    transform: translateX(-100%); /* Comienza fuera de la vista */
+    animation: slideIn 1s ease-out forwards; /* Aplica la animación */
+}
+/* Keyframes para animación de entrada */
+@keyframes slideIn {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.moto-title {
+    text-align: center;
+    text-transform: uppercase;
+    color: var(--primary);
+    padding-bottom: 1rem;
+    font-weight: 800;
+    font-style: italic;
+}
+
+.moto-description{
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+    font-weight: 700;
+}
+
+.moto-description p {
+    margin: 0; /* Esto elimina el margen por defecto */
+}
+
+.moto-title{
+    color: var(--primary);
+    font-weight: 800;
+    font-style: italic;
+}
+
+.button-more-moto {
+    margin-top: 18px;
+    padding: 0.70rem 2.5rem; /* Aumentar el área de clic (más largo y ancho) */
+    font-size: 1.2rem; /* Texto más pequeño */
+    line-height: 1rem;
+    border: 2px solid #A50034; /* Borde del color vinotinto */
+    text-align: center; /* Centrar el texto */
+    background-color: #A50034; /* Fondo vinotinto para los botones */
+    color: white; /* Texto en blanco */
+    border-radius: 12px; /* Bordes redondeados */
+    transition: background-color 0.3s; /* Efecto de transición al pasar el mouse */
+}
+
+/* Cambiar el color del fondo al pasar el mouse */
+.button-more-moto:hover {
+    background-color: white; /* Fondo blanco al pasar el mouse */
+    color: #A50034; /* Texto en vinotinto al pasar el mouse */
+}
+
+.button-more-moto-2 {
+    margin-top: 18px;
+    padding: 0.70rem 2.5rem; /* Aumentar el área de clic (más largo y ancho) */
+    font-size: 1.2rem; /* Texto más pequeño */
+    line-height: 1rem;
+    border: 2px solid white; /* Borde del color vinotinto */
+    text-align: center; /* Centrar el texto */
+    background-color: white; /* Fondo vinotinto para los botones */
+    color: #800000; /* Texto en blanco */
+    border-radius: 12px; /* Bordes redondeados */
+    transition: background-color 0.3s; /* Efecto de transición al pasar el mouse */
+}
+
+/* Cambiar el color del fondo al pasar el mouse */
+.button-more-moto-2:hover {
+    background-color: #800000; /* Fondo blanco al pasar el mouse */
+    color: white; /* Texto en vinotinto al pasar el mouse */
+}
+/* Estilos para vista móvil */
+@media (max-width: 768px) {
+    .title-page{
+        font-size: 18px;
+    }
+    .container{
+        margin-left: auto;
+        margin-right: auto;
+        padding-bottom: 5rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    .motos-div {
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Centra todas las tarjetas */
+        row-gap: 1.5rem; /* Espacio entre cada tarjeta */
+        padding: 0;
+    }
+
+    .motos-div .card {
+        width: 90%; /* Ajusta el ancho de la tarjeta para pantallas móviles */
+        max-width: 800px; /* Define un ancho máximo para evitar que se expanda demasiado */
+        margin: 0 auto; /* Centra la tarjeta horizontalmente */
+        padding: 1rem; /* Añade un poco de padding interno */
+    }
+
+    .bg-moto {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 250px; /* Tamaño del círculo gris */
+        height: 150px; /* Asegura un círculo de proporciones iguales */
+        border-radius: 10%; /* Mantiene el fondo circular */
+        margin: 0 auto;
+        overflow: hidden; /* Oculta cualquier parte de la imagen que sobresalga */
+    }
+
+    .bg-moto img {
+        width: 400px; /* Hace que la imagen de la moto sea mucho más grande */
+        height: auto; /* Mantiene la proporción de la imagen */
+    }
+}
+
+
+.bg-moto::before {
+    content: '';
+    position: absolute;
+    top: 60%;
+    right: 48%;
+    width: 16.375em;
+    height: 6.375em;
+    background: url(https://raw.githubusercontent.com/SochavaAG/example-mycode/master/pens/animation-smoke/images/smoke-right.png) 100% 100% no-repeat;
+    background-size: 100% 100%;
+    transition: all 0.5s;
+    opacity: 0; /* Asegúrate de que el humo esté oculto inicialmente */
+    animation: an-smoke-right 3s ease 0.6s forwards; /* Cambia "infinite" por "forwards" y añade "0.7s" */
+}
+
+@keyframes an-smoke-right {
+    0% {
+        opacity: 0; /* Comienza con opacidad 0 */
+        transform: translateX(-2%);
+    }
+    25% {
+        opacity: 0.8; /* Aumenta la opacidad */
+    }
+    50% {
+        opacity: 1; /* Máxima opacidad */
+    }
+    75% {
+        opacity: 0.8; /* Disminuye la opacidad */
+    }
+    100% {
+        opacity: 0; /* Vuelve a ser invisible */
+        transform: translateX(5%);
+    }
+}
+
+
+
+
+/* footer */
+
+.footer{
+    background-color: var(--secondary);
+    height: 5rem;
+}
+
+
+
+/* Estilo para el botón de menú */
+.menu-toggle {
+    display: none;
+    background-color: transparent;
+    color: white;
+    font-size: 1.9rem; /* Tamaño de las tres rayas */
+    border: none;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .items-navbar {
+        display: none; /* Oculto por defecto */
+        flex-direction: column;
+        background-color: var(--secondary);
+        position: absolute;
+        top: 60px;
+        right: -30px;
+        width: 100%;
+        padding: 1rem;
+        z-index: 1;
+    }
+
+    .items-navbar li {
+        margin: 1rem 0; /* Espacio vertical entre opciones en vista móvil */
+    }
+
+    .menu-toggle {
+        display: inline-block;
+    }
+
+    /* Estilo para la barra de opciones */
+    .more-options-bar {
+        width: 70%;
+        display: flex;
+        flex-direction: column; /* Asegura que los botones estén en una columna */
+        gap: 0.1rem; /* Espacio entre los botones */
+        margin: 0; /* Asegúrate de que no haya margen extra */
+        background-color: transparent; /* Eliminar el color de fondo */
+    }
+
+    .option-item {
+        padding: 0.5rem; /* Área de clic */
+        font-size: 0.75rem; /* Texto más pequeño */
+        line-height: 1rem;
+        border: 2px solid var(--secondary); /* Borde para los botones */
+        text-align: center; /* Centrar el texto */
+        background-color: white; /* Fondo blanco para los botones */
+        border-radius: 12px; /* Rounding the corners */
+        transition: background-color 0.3s; /* Efecto de transición al pasar el mouse */
+    }
+    
+    /* Opción para cambiar el color al pasar el mouse */
+    .option-item:hover {
+        background-color: var(--secondary); /* Cambia el color de fondo al pasar el mouse */
+        color: white; /* Cambia el color del texto al pasar el mouse */
+    }
+
+    .hero {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        width: 100%;
+        padding-bottom: 20rem; /* Espacio en la parte inferior para el contenido */
+    }
+
+    .img-hero {
+        order: 1;
+        width: 100%;
+    }
+
+    .content-hero {
+        order: 2;
+        padding: 1rem;
+        width: 100%;
+    }
+
+    .content-hero {
+        padding: 1rem; /* Mantiene el padding alrededor del contenido */
+    }
+    
+    .main-title {
+        margin-bottom: 0; /* Elimina el margen inferior del h1 */
+    }
+    
+    .main-description {
+        margin-top: 0; /* Elimina el margen superior del p */
+    }
+
+    .more-options {
+        order: 3;
+        width: 100%;
+        margin-top: 1rem; /* Espacio entre el contenido y los botones */
+    }
+}
+
+/* Concesionarios
+
+/* Imagen de hero-dealerships como el footer, delgada y pegada a los bordes */
+.hero-dealerships img {
+    width: 100%;
+    height: 310px;
+    object-fit: cover;
+    object-position: top;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: -5px;
+}
+
+/* Mantener find-your-dealership en una sola columna */
+.find-your-dealership {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+/* Contenedor de tarjetas en cuadrícula */
+.card-blocks {
+    display: grid;
+    grid-template-columns: 1fr; /* Una columna en pantallas pequeñas */
+    gap: 1rem;
+}
+
+@media (min-width: 768px) {
+    .card-blocks {
+        grid-template-columns: repeat(2, 1fr); /* Dos columnas en pantallas medianas y grandes */
+        grid-auto-rows: auto; /* Altura automática para mantener proporción */
+    }
+}
+
+/* Estilos para cada card-dealership */
+.card-dealership {
+    background-color: #800000; /* Color vinotinto */
+    color: white;
+    font-weight: normal; /* Hace que el texto sea más delgado */
+    padding: 0.6rem; /* Hacer las tarjetas más pequeñas */
+    border-radius: 28px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 550px; /* Ajusta el ancho máximo para que sean menos largos */
+    margin: 0 auto; /* Centra las tarjetas horizontalmente */
+}
+
+/* Título de cada tarjeta (hace que sea más grande) */
+.card-dealership p.text-white {
+    font-size: 1.5rem; /* Tamaño del título */
+    font-weight: bold;
+    text-align: center; /* Centra el título */
+}
+
+.card-dealership p {
+    font-size: 0.85rem; /* Tamaño de fuente más pequeño para el texto */
+    font-weight: normal; /* Asegúrate de que el peso de la fuente sea normal */
+}
+
+/* Iconos .svg pequeños y posicionados antes del texto */
+/* Alineación de texto a la izquierda dentro de cada tarjeta */
+.location-content {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    justify-content: flex-start; /* Alinea el contenido hacia la izquierda */
+}
+
+.location-content p {
+    margin: 0; /* Quita el margen del párrafo */
+    text-align: left; /* Asegura que el texto esté alineado a la izquierda */
+    flex: 1; /* Expande el texto para ocupar el espacio necesario */
+}
+
+
+/* Centrado del botón dentro de la tarjeta */
+.card-dealership .flex {
+    text-align: center; /* Centra el botón en su contenedor */
+}
+
+/* Ajustes adicionales para el botón */
+.card-dealership .button-secondary {
+    display: inline-block; /* Permite que el botón se centre correctamente */
+}
+
+.location-content img {
+    width: 18px; /* Tamaño del icono reducido */
+    height: 18px;
+    margin-right: 4px; /* Espacio entre el icono y el texto */
+    vertical-align: middle;
+}
+
+/* Estilos para el botón dentro de cada card-dealership */
+.card-dealership .button-secondary {
+    background-color: white;
+    color: #800000;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-align: center;
+}
+
+.card-dealership .button-secondary:hover {
+    background-color: #d3d3d3;
+}
+
+/* Estilo para las etiquetas */
+.label {
+    display: block; /* Hacer que la etiqueta ocupe todo el ancho */
+    text-align: center; /* Centrar el texto de la etiqueta */
+    margin: 0.5rem 0; /* Margen superior e inferior */
+}
+
+/* Contenedor de opciones */
+.options-container {
+    display: flex; /* Usar Flexbox */
+    justify-content: center; /* Centrar horizontalmente los elementos */
+    gap: 7rem; /* Espacio entre los selects */
+}
+
+/* Estilo para los selects */
+.styled-select {
+    width: 250px; /* Ancho más corto */
+    padding: 0.5rem; /* Espaciado interno */
+    border: 2px solid #800000; /* Borde vinotinto */
+    background-color: white; /* Fondo blanco */
+    color: #000; /* Color del texto */
+    font-size: 1rem; /* Tamaño de fuente */
+    border-radius: 5px; /* Bordes redondeados */
+    outline: none; /* Sin borde al hacer clic */
+    text-align: center; /* Centrar el texto en el select */
+}
+
+/* Opcional: para cambiar el color del texto del select */
+.styled-select option {
+    background-color: white; /* Fondo blanco */
+    color: #000; /* Color del texto */
+}
+
+/* Media Query para dispositivos móviles */
+@media (max-width: 768px) { /* Ajusta el ancho según tu diseño */
+    .hero-dealerships img {
+        height: 150px; /* Reduce la altura de la imagen en vista móvil */
+        object-fit: cover; /* Asegura que la imagen mantenga su aspecto */
+    }
+    .location-content img {
+        width: 18px; /* Tamaño del icono reducido */
+        height: 18px;
+        margin-right: 4px; /* Espacio entre el icono y el texto */
+        vertical-align: middle;
+    }
+
+    /* Contenedor de opciones */
+    .options-container {
+        
+        gap: 1.5rem; /* Reduce el espacio entre los selects */
+    }
+
+    /* Estilo para los selects */
+    .styled-select {
+        width: 120px; /* Ancho más corto para móviles */
+    }
+}
+
+/* contacto
+
+/* Estilos generales */
+.container-contacto {
+    display: flex;
+    justify-content: center;
+    align-items: stretch; /* Asegura que ambas secciones tengan la misma altura */
+}
+
+/* Flexbox para dividir en dos secciones */
+.flex-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    height: 100vh;
+    padding: 40px;
+}
+
+/* Imagen de las motos */
+.contact-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.motorcycle-image {
+    max-width: 90%;
+    max-height: 80vh;
+    border-radius: 20px;
+    margin-top: 50px;
+}
+
+/* Formulario */
+.form-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
+    max-width: 500px;
+}
+
+.form-title {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+/* Estilos para los inputs */
+.input-form {
+    width: 100%;
+    border: 2px solid #800000;
+    border-radius: 20px;
+    padding: 15px;
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+
+/* Botón */
+.bg-primary {
+    background-color: #800000;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 15px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.bg-primary:hover {
+    background-color: #600000;
+}
+
+/* Vista móvil: cambiar a una columna */
+@media (max-width: 768px) {
+    .flex-container {
+        flex-direction: column; /* Cambia a columna */
+        height: auto; /* Deja que el contenido crezca en altura */
+        padding: 20px;
+    }
+    
+    .motorcycle-image {
+        margin-top: 20px; /* Ajuste de espacio superior */
+    }
+
+    .form-container {
+        margin-right: 40px;
+        padding: 10px; /* Reducir el padding en móvil */
+        max-width: 80%; /* Asegura que ocupe todo el ancho en móvil */
+    }
+}
