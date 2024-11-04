@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <title>Honda</title>
+</head>
+
+
+<header class="bg-secondary">
+    <nav class="navbar">
+        <div>
+            <img src="../images/hondaLogo.png" alt="Logo">
+        </div>
+        <!-- Botón de menú en vista móvil como tres rayas -->
+        <button class="menu-toggle" onclick="toggleMenu()">≡</button>
+        <ul class="items-navbar">
+            <li><a href="../index.html">Inico</a></li>
+            <li><a href="../pages/noticias.html">Noticias</a></li>
+            <li><a href="../pages/motos.html">Motos</a></li>
+            <li><a href="../pages/concesionarios.html">Concesionarios</a></li>
+            <li><a href="../pages/contacto.html">Contacto</a></li>
+        </ul>
+    </nav>
+</header>
+
+<body>
+    <div class="container-contact">  
+        <h1 class="title-page">Selecciona tu próxima motocicleta</h1>
+        <hr>
+        <!-- Cards de motos -->
+        <div class="motos-div">
+
+            <div class="card">
+                <div class="bg-moto">
+                    <img src="../images/moto1.png" alt="Moto" class="">
+                </div>
+                <h3 class="moto-title text-xl">Fox TR180</h3> <!-- Tamaño uniforme -->
+                <div class="moto-description">
+                    <p class="font-bold" style="margin-bottom: 0.3rem;">Monto: 5.000$</p>
+                    <p class="font-bold" style="margin-bottom: 0.3rem;">Velocidad max: 180km</p>
+                    <p class="font-bold mb-4">Estilo: SNAKE</p>
+                    <button class="rounded-full button-more-moto">Conocer más</button>
+                </div>           
+            </div>
+
+            <div class="card flex flex-col p-4 gap-y-3">
+                <div class="bg-gray-200 bg-moto">
+                    <img src="../images/moto2.png" alt="Moto" class="h-auto rounded-md px-8 py-8">
+                </div>
+                <h3 class="text-center uppercase moto-title text-xl pb-4">AFRICA TWIN DCT</h3> <!-- Tamaño uniforme -->
+                <div class="moto-description">
+                    <p class="font-bold">Monto: 16.000$</p>
+                    <p class="font-bold">Velocidad max: 210km</p>
+                    <p class="font-bold mb-4">Estilo: ADVENTURE</p>
+                    <button class="rounded-full button-more-moto">Conocer más</button>
+                </div>           
+            </div>
+
+            <div class="card flex flex-col p-4 gap-y-3">
+                <div class="bg-gray-200 bg-moto">
+                    <img src="../images/moto3.png" alt="Moto" class="h-auto rounded-md px-8 py-8">
+                </div>
+                <h3 class="text-center uppercase moto-title text-xl pb-4">CBR100RR</h3> <!-- Tamaño uniforme -->
+                <div class="moto-description">
+                    <p class="font-bold">Monto: 30.000$</p>
+                    <p class="font-bold">Velocidad max: 300km</p>
+                    <p class="font-bold mb-4">Estilo: RACING</p>
+                    <button class="rounded-full button-more-moto">Conocer más</button>
+                </div>           
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+    <script>
+        function toggleMenu() {
+            const navbarItems = document.querySelector('.items-navbar');
+            navbarItems.style.display = navbarItems.style.display === 'block' ? 'none' : 'block';
+        }
+    </script>
+    
+</body>
+<footer class="footer"></footer>
